@@ -1,11 +1,18 @@
-package game.main;
+package com.game.main;
 
-public class Game implements Runnable {
+import com.game.gfx.Windows;
+
+import java.awt.*;
+
+public class Game extends Canvas implements Runnable {
 
     // Constantes
     private static final int MILLIS_PER_SEC = 1000;
     private static final int NANOS_PER_SEC = 1000000000;
     private static final double NUM_TICKS = 60.0;
+    private static final String NAME = "Super Mario Bros";
+    private static final int WINDOW_WIDTH = 960;
+    private static final int WINDOW_HEIGTH = 720;
 
     // Variáveis
     private boolean running;
@@ -22,6 +29,7 @@ public class Game implements Runnable {
     }
 
     private void initialize() {
+        new Windows(WINDOW_WIDTH, WINDOW_HEIGTH, NAME, this);
         start();
     }
 
